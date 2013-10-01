@@ -2,6 +2,7 @@
 import os
 
 DEBUG = os.environ['RDS_HOSTNAME'] == 'localhost'
+DEBUG = TRUE ## Force
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
