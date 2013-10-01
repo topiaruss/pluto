@@ -1,8 +1,8 @@
 # Django settings for mysite project.
 import os
 
-DEBUG = os.environ['RDS_HOSTNAME'] == 'localhost'
-DEBUG = TRUE ## Force
+DEBUG = os.environ['RDS_HOSTNAME'] == 'localhost' or\
+        'FORCE_DEBUG' in os.environ
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
