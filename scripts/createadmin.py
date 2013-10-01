@@ -11,3 +11,6 @@ if User.objects.count() == 0:
     admin.is_staff = True
     admin.save()
 
+env = os.environ.items()
+for k, v in sorted(env):
+    print k, v
