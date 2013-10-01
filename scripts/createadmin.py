@@ -6,7 +6,7 @@ import os
 from django.contrib.auth.models import User
 if User.objects.count() == 0:
     admin = User.objects.create(username='admin')
-    admin.set_password(os.environ['RDS_DB_NAME'])
+    admin.set_password(os.environ['INITIAL_ADMIN_PASSWORD'])
     admin.is_superuser = True
     admin.is_staff = True
     admin.save()
