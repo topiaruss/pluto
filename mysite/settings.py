@@ -3,6 +3,7 @@ import os
 
 DEBUG = os.environ['RDS_HOSTNAME'] == 'localhost' or\
         'FORCE_DEBUG' in os.environ
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -53,6 +54,9 @@ MEDIA_ROOT = ''
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = ''
+
+# The directory where the settings file is
+ROOTDIR = os.path.dirname(os.path.abspath(__file__))
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -110,6 +114,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    ROOTDIR + '/templates/errors',
+    ROOTDIR + '/templates',
 )
 
 INSTALLED_APPS = (
