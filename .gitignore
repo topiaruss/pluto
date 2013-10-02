@@ -1,3 +1,4 @@
 *.pyc
 .elasticbeanstalk/
 env_settings.source
+static/
