@@ -13,11 +13,11 @@ if not admin:
     admin = User.objects.create_user(
         username='admin',
         email='russf@topia.com',
-        password=os.environ['INITIAL_ADMIN_PASSWORD']
+        password=os.environ['PARAM1']
         )
 else:
     admin = admin[0]
-    admin.set_password(os.environ['INITIAL_ADMIN_PASSWORD'])
+    admin.set_password(os.environ['PARAM1'])
     admin.is_superuser = True
     admin.is_staff = True
 admin.save()
